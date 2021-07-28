@@ -8,18 +8,24 @@ const connect = function () {
 
   // interpret incoming data as text
   conn.setEncoding("utf8");
-conn.on('data', () =>{
-  console.log("you ded cuz you idled");
-});
 
-conn.on('connect', () => {
-  console.log("Successfully connected to game server");
-  conn.write('Name: CAS')
-}); 
+  conn.on('data', () => {
+    console.log("you ded cuz you idled");
+  });
 
+  conn.on('connect', () => {
+    console.log("Successfully connected to game server");
+    conn.write('Name: CAS');
+    setTimeout(() => {conn.write('Move: up')}, 500);
+    setTimeout(() => {conn.write('Move: left')}, 1000);
+    setTimeout(() => {conn.write('Move: down')}, 1500);
+    setTimeout(() => {conn.write('Move: left')}, 2000);
+    // setInterval(() => {conn.write('Move: up')}, 500);
+  });
 
+  
 
   return conn;
 };
 
-module.exports = {connect};
+module.exports = { connect };
