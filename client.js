@@ -25,7 +25,10 @@ const connect = function () {
     conn.write('Move: left');
     conn.write('Move: right');
     conn.write('Move: down');
+    conn.write('Say: GO');
+    conn.write('Say: YO');
   });
+  
 
   
 
