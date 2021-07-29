@@ -16,11 +16,15 @@ const connect = function () {
   conn.on('connect', () => {
     console.log("Successfully connected to game server");
     conn.write('Name: CAS');
-    setTimeout(() => {conn.write('Move: up')}, 500);
-    setTimeout(() => {conn.write('Move: left')}, 1000);
-    setTimeout(() => {conn.write('Move: down')}, 1500);
-    setTimeout(() => {conn.write('Move: left')}, 2000);
-    // setInterval(() => {conn.write('Move: up')}, 500);
+    // setTimeout(() => {conn.write('Move: up')}, 500);
+    // setTimeout(() => {conn.write('Move: left')}, 1000);
+    // setTimeout(() => {conn.write('Move: down')}, 1500);
+    // setTimeout(() => {conn.write('Move: right')}, 2000);
+    //setInterval(() => {conn.write('Move: up')}, 500);
+    conn.write('Move: up');
+    conn.write('Move: left');
+    conn.write('Move: right');
+    conn.write('Move: down');
   });
 
   
